@@ -6,11 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Todo's for ${name}</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<h1>Your Todos</h1>
-	<table>
-		<caption>Your Todos are</caption>
+	<div class="container">
+	<table class="table table-striped">
+	<caption>Your todos are</caption>
 		<thead>
 			<tr>
 				<th>Description</th>
@@ -25,11 +26,14 @@
 				<td>${todo.targetDate}</td>
 				<td>${todo.done}</td>
 			</tr>
-		</c:forEach>
-			
+		</c:forEach>			
 		</tbody>
 	</table>
-	<br />
-	<a href="/add-todo">ADD TODO</a>
+	
+	<div><a class="btn btn-success" href="/add-todo">ADD TODO</a></div>
+	
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</div>
 </body>
 </html>
