@@ -35,8 +35,9 @@ public class TodoController {
 	
 	@RequestMapping(value="/add-todo", method=RequestMethod.POST)
 	public String addTodo(ModelMap model, @RequestParam String desc) {
-//		model.put("desc", desc);
+
 		service.addTodo((String)model.get("name"), desc, new Date(), false);
+		//redirect:/uri will redirect to that URI rather than hitting the jsp
 		return "redirect:/list-todos";
 	}
 }
