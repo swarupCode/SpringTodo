@@ -40,4 +40,12 @@ public class TodoController {
 		//redirect:/uri will redirect to that URI rather than hitting the jsp
 		return "redirect:/list-todos";
 	}
+	
+	@RequestMapping(value="/delete-todo", method=RequestMethod.GET)
+	public String deleteTodo(@RequestParam int id) {
+
+		service.deleteTodo(id);
+		//redirect:/uri will redirect to that URI rather than hitting the jsp
+		return "redirect:/list-todos";
+	}
 }
